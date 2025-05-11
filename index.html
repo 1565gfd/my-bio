@@ -30,6 +30,7 @@
       max-width: 450px;
       text-align: center;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      position: relative;
     }
 
     .card:hover {
@@ -122,6 +123,27 @@
       margin-right: 5px;
     }
 
+    /* Стили для чекбоксов */
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    
+    .checkbox-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    /* Версия сайта */
+    .version {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
   </style>
 </head>
 <body>
@@ -141,12 +163,30 @@
     <p>Языки: 
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/320px-Flag_of_Russia.svg.png" class="flag" alt="Русский"> Русский,
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_Kingdom.svg" class="flag" alt="Английский"> Английский,
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Armenia.svg/320px-Flag_of_Armenia.svg.png" class="flag" alt="Армения"> Армянский
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Armenia.svg/320px-Flag_of_Armenia.svg.png" class="flag" alt="Армянский"> Армянский
     </p>
-    <p>📅 Дата рождения: 4 декабря</p>
-    <p class="emoji">✈️ Люблю: Авиация, споттинг (авиационный)</p>
-    <p>🏡 Живу в: 🇦🇲 Армения</p>
-    <p>🌍 Национальность: 🇷🇺 Русский</p>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="birthday" disabled>
+      <label for="birthday">📅 Дата рождения: 4 декабря</label>
+    </div>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="hobbies" checked disabled>
+      <label for="hobbies">✈️ Люблю: Авиация, споттинг (авиационный)</label>
+    </div>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="location" disabled>
+      <label for="location">🏡 Живу в: 🇦🇲 Армения</label>
+    </div>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="nationality" disabled>
+      <label for="nationality">🌍 Национальность: 🇷🇺 Русский</label>
+    </div>
+
+    <div class="version">v3.1</div>
   </div>
 
   <script>
@@ -167,4 +207,3 @@
   </script>
 </body>
 </html>
-
