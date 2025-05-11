@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Фёдор (BitForge)</title>
+  <style>
+    /* Общие стили */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    /* Карточка */
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      max-width: 450px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      color: #eeeeee;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #d1d1d1;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 24px;
+    }
+
+    /* Кнопка для изображения */
+    .image-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    /* Стиль для картинки на весь экран */
+    .full-screen-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://avatars.mds.yandex.net/i?id=5f728502921ae37ecfe34c0860537107_l-5885375-images-thumbs&n=13');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .show-image {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Стиль для закрытия картинки */
+    .close-image {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Кнопка для изображения -->
+  <button class="image-button" id="showImageBtn">+</button>
+
+  <!-- Картинка, которая будет отображаться на весь экран -->
+  <div class="full-screen-image" id="fullScreenImage">
+    <!-- Кнопка закрытия изображения -->
+    <button class="close-image" id="closeImageBtn">X</button>
+  </div>
+
+  <div class="card">
+    <h1>БИО</h1>
+    <p>Никнейм: <strong>BitForge</strong></p>
+    <p>Языки: 🇷🇺 Русский, 🇺🇸 English</p>
+    <p>📅 Дата рождения: 4 декабря</p>
+    <p class="emoji">✈️ Люблю авиацию</p>
+    <p>🏡 Живу в: 🇦🇲 Армения</p>
+    <p>🌍 Национальность: 🇷🇺 Русский</p>
+  </div>
+
+  <script>
+    // Функциональность кнопки для показа картинки
+    const showImageBtn = document.getElementById('showImageBtn');
+    const fullScreenImage = document.getElementById('fullScreenImage');
+    const closeImageBtn = document.getElementById('closeImageBtn');
+
+    // Показываем картинку
+    showImageBtn.addEventListener('click', () => {
+      fullScreenImage.classList.add('show-image');
+    });
+
+    // Закрываем картинку
+    closeImageBtn.addEventListener('click', () => {
+      fullScreenImage.classList.remove('show-image');
+    });
+  </script>
+</body>
+</html>
+
